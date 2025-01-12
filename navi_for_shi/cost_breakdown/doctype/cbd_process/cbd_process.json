@@ -1,0 +1,99 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2025-01-11 20:41:16.178494",
+    "custom": 1,
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "part",
+     "material",
+     "size_or_dimension",
+     "column_break_xcqq",
+     "quantity",
+     "uom",
+     "column_break_qcul",
+     "costuom",
+     "subtotal_cost"
+    ],
+    "fields": [
+     {
+      "fieldname": "part",
+      "fieldtype": "Data",
+      "label": "Part"
+     },
+     {
+      "columns": 2,
+      "fieldname": "material",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_preview": 1,
+      "in_standard_filter": 1,
+      "label": "Process"
+     },
+     {
+      "fieldname": "size_or_dimension",
+      "fieldtype": "Data",
+      "label": "Size or Dimension"
+     },
+     {
+      "fieldname": "column_break_xcqq",
+      "fieldtype": "Column Break"
+     },
+     {
+      "columns": 1,
+      "fieldname": "quantity",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "in_preview": 1,
+      "in_standard_filter": 1,
+      "label": "Quantity"
+     },
+     {
+      "columns": 1,
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_preview": 1,
+      "in_standard_filter": 1,
+      "label": "UoM",
+      "options": "UOM"
+     },
+     {
+      "fieldname": "column_break_qcul",
+      "fieldtype": "Column Break"
+     },
+     {
+      "columns": 2,
+      "fieldname": "costuom",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "in_preview": 1,
+      "in_standard_filter": 1,
+      "label": "Cost/UoM"
+     },
+     {
+      "columns": 2,
+      "fieldname": "subtotal_cost",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "in_preview": 1,
+      "in_standard_filter": 1,
+      "label": "Subtotal Cost"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-01-11 20:50:26.284464",
+    "modified_by": "Administrator",
+    "module": "Cost Breakdown",
+    "name": "CBD Process",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+   }

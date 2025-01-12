@@ -1,0 +1,390 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-11 12:46:24.379250",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_name",
+  "customer_name",
+  "uom",
+  "column_break_omtl",
+  "amended_from",
+  "sales_quotation",
+  "section_break_suzg",
+  "table_material",
+  "section_break_tftf",
+  "column_break_vvjr",
+  "column_break_egyn",
+  "column_break_ebzy",
+  "column_break_glzy",
+  "total_material_cost",
+  "consumable_section",
+  "table_consumable",
+  "section_break_hdnm",
+  "column_break_xjct",
+  "column_break_arys",
+  "column_break_aggd",
+  "column_break_zusf",
+  "total_consumable_cost",
+  "section_break_ddzf",
+  "table_process",
+  "section_break_clbr",
+  "column_break_hgyo",
+  "column_break_gjep",
+  "column_break_xsfe",
+  "total_process_time",
+  "column_break_hlma",
+  "total_process_cost",
+  "depretiation_and_amortization_section",
+  "table_depreciation",
+  "section_break_bllx",
+  "column_break_ozbu",
+  "column_break_uujz",
+  "column_break_gito",
+  "column_break_ixdi",
+  "total_depretiation_cost",
+  "section_break_szqd",
+  "column_break_pnby",
+  "column_break_qvvm",
+  "column_break_doqy",
+  "total_1",
+  "transport_and_handling",
+  "section_break_wxuc",
+  "column_break_lhem",
+  "column_break_qutr",
+  "overhead",
+  "profit",
+  "column_break_bvyb",
+  "overhead_total",
+  "profit_total",
+  "section_break_qjtm",
+  "column_break_bxor",
+  "column_break_html",
+  "column_break_ohys",
+  "grand_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cost Breakdown Sheet",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "job_name",
+   "fieldtype": "Data",
+   "label": "Job Name"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_omtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Sales Quotation Number ",
+   "fieldname": "sales_quotation",
+   "fieldtype": "Data",
+   "label": "Sales Quotation"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_suzg",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Material"
+  },
+  {
+   "fieldname": "table_material",
+   "fieldtype": "Table",
+   "label": "List of Material",
+   "options": "CBD Material"
+  },
+  {
+   "fieldname": "section_break_tftf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_vvjr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_egyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ebzy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_glzy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_material_cost",
+   "fieldtype": "Currency",
+   "label": "Total Material Cost",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "consumable_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Consumable"
+  },
+  {
+   "fieldname": "table_consumable",
+   "fieldtype": "Table",
+   "label": "List of Consumable",
+   "options": "CBD Consumable"
+  },
+  {
+   "fieldname": "section_break_hdnm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xjct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_arys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aggd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zusf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_consumable_cost",
+   "fieldtype": "Currency",
+   "label": "Total Consumable Cost",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_ddzf",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Process"
+  },
+  {
+   "fieldname": "table_process",
+   "fieldtype": "Table",
+   "label": "List of Process",
+   "options": "CBD Process"
+  },
+  {
+   "fieldname": "section_break_clbr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hgyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gjep",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xsfe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_process_time",
+   "fieldtype": "Float",
+   "label": "Total Process Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hlma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_process_cost",
+   "fieldtype": "Currency",
+   "label": "Total Process Cost",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "depretiation_and_amortization_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Depretiation And Amortization"
+  },
+  {
+   "fieldname": "section_break_bllx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ozbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uujz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gito",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ixdi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_szqd",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_pnby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qvvm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_doqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_wxuc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_lhem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bvyb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qutr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Material + Consumable + Process + Depreciation",
+   "fieldname": "total_1",
+   "fieldtype": "Currency",
+   "label": "Total A+B+C+D",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_qjtm",
+   "fieldtype": "Section Break",
+   "label": "Service Charge"
+  },
+  {
+   "fieldname": "column_break_bxor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_html",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ohys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transport_and_handling",
+   "fieldtype": "Currency",
+   "label": "Transport and Handling"
+  },
+  {
+   "fieldname": "overhead",
+   "fieldtype": "Percent",
+   "label": "Overhead %"
+  },
+  {
+   "fieldname": "profit",
+   "fieldtype": "Percent",
+   "label": "Profit %"
+  },
+  {
+   "fieldname": "overhead_total",
+   "fieldtype": "Currency",
+   "label": "Overhead x (A+B+C+D)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profit_total",
+   "fieldtype": "Currency",
+   "label": "Profit x (A+B+C+D)",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_depretiation_cost",
+   "fieldtype": "Currency",
+   "label": "Total Depretiation and Amortization Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "table_depreciation",
+   "fieldtype": "Table",
+   "label": "List of Depretiation And Amortization",
+   "options": "CBD Depreciation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-12 19:06:24.043527",
+ "modified_by": "Administrator",
+ "module": "Cost Breakdown",
+ "name": "Cost Breakdown Sheet",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
