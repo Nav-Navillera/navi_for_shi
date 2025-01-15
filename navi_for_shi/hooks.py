@@ -11,7 +11,11 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/navi_for_shi/css/navi_for_shi.css"
-# app_include_js = "/assets/navi_for_shi/js/navi_for_shi.js"
+app_include_js = [
+    "/assets/navi_for_shi/js/map_defaults.js"
+    # ...
+]
+
 
 # include js, css files in header of web template
 # web_include_css = "/assets/navi_for_shi/css/navi_for_shi.css"
