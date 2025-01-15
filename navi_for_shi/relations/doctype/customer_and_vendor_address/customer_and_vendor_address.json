@@ -7,8 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "address_name",
+  "address",
   "column_break_ovgh",
-  "address"
+  "exact_location"
  ],
  "fields": [
   {
@@ -35,12 +36,17 @@
    "label": "Address",
    "max_height": "150px",
    "reqd": 1
+  },
+  {
+   "fieldname": "exact_location",
+   "fieldtype": "Geolocation",
+   "label": "Exact Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-16 02:44:20.516581",
+ "modified": "2025-01-16 02:59:00.790910",
  "modified_by": "Administrator",
  "module": "Relations",
  "name": "Customer and Vendor Address",
