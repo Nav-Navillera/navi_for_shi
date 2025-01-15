@@ -18,11 +18,8 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
         };
 
         Object.keys(tables).forEach(table_name => {
-            console.log(`Checking table: ${table_name}`, frm.doc[table_name]);
             if (frm.doc[table_name] && frm.doc[table_name].length > 0) {
-                console.log(`Processing table: ${table_name}`);
                 if (table_name == 'table_process') {
-                    console.log('table process pass');
                     frm.events.update_time_totals(frm, {
                         table_name: table_name,
                         total_field: 'total_process_time'
@@ -34,6 +31,42 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
                 });                
             }
         });
+
+        // total a + b + c + d
+        let ttl = 
+        (frm.doc.total_material_cost ?? 0) +
+        (frm.doc.total_consumable_cost ?? 0) +
+        (frm.doc.total_process_cost ?? 0) +
+        (frm.doc.total_depreciation_cost ?? 0);    
+        frm.set_value('total_1', ttl);
+
+        // Overhead (persentase dari total)
+        let overhead_ttl = (frm.doc.overhead ?? 0) * ttl / 100;
+        frm.set_value('overhead_total', overhead_ttl);
+
+        // Profit (persentase dari total)
+        let profit_ttl = (frm.doc.profit ?? 0) * ttl / 100;
+        frm.set_value('profit_total', profit_ttl);
+
+        // grand total
+        let grand_ttl =         
+        (frm.doc.total_1 ?? 0) +
+        (frm.doc.transport_and_handling ?? 0) +
+        (frm.doc.overhead_total ?? 0) +
+        (frm.doc.profit_total ?? 0); 
+        frm.set_value('grand_total', grand_ttl);
+    },
+
+    overhead: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    profit: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    transport_and_handling: function(frm) {
+        frm.trigger('update_all_table_totals');
     },
 
     update_table_totals: function (frm, { table_name, total_field }) {
@@ -43,7 +76,6 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
             frm.doc[table_name].forEach(row => {
                 row.subtotal_cost = row.quantity * row.cost_per_uom;
                 total_cost += row.subtotal_cost;
-                console.log(`Row quantity: ${row.quantity}, cost per uom: ${row.cost_per_uom}`);
             });
 
             frm.set_value(total_field, total_cost);
@@ -63,5 +95,61 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
             frm.set_value(total_field, total_time);
             frm.refresh_field(total_field);
         }
+    }
+});
+
+frappe.ui.form.on('CBD Material', {
+    quantity: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    cost_per_uom: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    table_material_remove: function(frm) {
+        frm.trigger('update_all_table_totals');
+    }
+});
+
+frappe.ui.form.on('CBD Consumable', {
+    quantity: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    cost_per_uom: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    table_consumable_remove: function(frm) {
+        frm.trigger('update_all_table_totals');
+    }
+});
+
+frappe.ui.form.on('CBD Process', {
+    quantity: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    cost_per_uom: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    table_process_remove: function(frm) {
+        frm.trigger('update_all_table_totals');
+    }
+});
+
+frappe.ui.form.on('CBD Depreciation', {
+    quantity: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    cost_per_uom: function(frm) {
+        frm.trigger('update_all_table_totals');
+    },
+
+    table_depreciation_remove: function(frm) {
+        frm.trigger('update_all_table_totals');
     }
 });

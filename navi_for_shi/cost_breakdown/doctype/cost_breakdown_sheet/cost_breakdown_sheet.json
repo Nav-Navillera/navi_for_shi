@@ -43,7 +43,7 @@
   "column_break_uujz",
   "column_break_gito",
   "column_break_ixdi",
-  "total_depretiation_cost",
+  "total_depreciation_cost",
   "section_break_szqd",
   "column_break_pnby",
   "column_break_qvvm",
@@ -212,6 +212,7 @@
   },
   {
    "bold": 1,
+   "description": "Hour",
    "fieldname": "total_process_time",
    "fieldtype": "Float",
    "label": "Total Process Time",
@@ -348,23 +349,23 @@
    "read_only": 1
   },
   {
-   "bold": 1,
-   "fieldname": "total_depretiation_cost",
-   "fieldtype": "Currency",
-   "label": "Total Depretiation and Amortization Cost",
-   "read_only": 1
-  },
-  {
    "fieldname": "table_depreciation",
    "fieldtype": "Table",
    "label": "List of Depretiation And Amortization",
    "options": "CBD Depreciation"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_depreciation_cost",
+   "fieldtype": "Currency",
+   "label": "Total Depretiation and Amortization Cost",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-12 19:06:24.043527",
+ "modified": "2025-01-15 14:19:05.032434",
  "modified_by": "Administrator",
  "module": "Cost Breakdown",
  "name": "Cost Breakdown Sheet",
