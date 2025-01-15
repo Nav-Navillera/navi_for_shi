@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:cust_vend_name",
+ "creation": "2025-01-16 02:27:21.325163",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cust_vend_name",
+  "column_break_sdxl",
+  "cust_vend_type",
+  "section_break_qpph",
+  "table_address"
+ ],
+ "fields": [
+  {
+   "fieldname": "cust_vend_name",
+   "fieldtype": "Data",
+   "label": "Customer or Vendor Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "cust_vend_type",
+   "fieldtype": "Select",
+   "label": "Type of Relations",
+   "options": "Customer\nVendor\nCustomer and Vendor"
+  },
+  {
+   "fieldname": "column_break_sdxl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qpph",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_address",
+   "fieldtype": "Table",
+   "label": "List of Address",
+   "options": "Customer and Vendor Address"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-16 02:47:06.856281",
+ "modified_by": "Administrator",
+ "module": "Relations",
+ "name": "Customer and Vendor",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "cust_vend_name",
+ "track_changes": 1
+}

@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-16 02:32:47.631307",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "address_name",
+  "column_break_ovgh",
+  "address"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "default": "Head Office",
+   "fieldname": "address_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Address Name",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ovgh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 7,
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Address",
+   "max_height": "150px",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-16 02:44:20.516581",
+ "modified_by": "Administrator",
+ "module": "Relations",
+ "name": "Customer and Vendor Address",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
