@@ -9,7 +9,8 @@
   "address_name",
   "address",
   "column_break_ovgh",
-  "exact_location"
+  "latitude",
+  "longitude"
  ],
  "fields": [
   {
@@ -25,7 +26,8 @@
   },
   {
    "fieldname": "column_break_ovgh",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "label": "Geolocation"
   },
   {
    "columns": 7,
@@ -38,15 +40,20 @@
    "reqd": 1
   },
   {
-   "fieldname": "exact_location",
-   "fieldtype": "Geolocation",
-   "label": "Exact Location"
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-16 02:59:00.790910",
+ "modified": "2025-01-16 04:02:28.732153",
  "modified_by": "Administrator",
  "module": "Relations",
  "name": "Customer and Vendor Address",
