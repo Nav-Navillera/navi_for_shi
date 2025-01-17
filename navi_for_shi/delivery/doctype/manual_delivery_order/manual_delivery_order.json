@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:DOM-SHI-{YYYY}-{####}",
  "creation": "2025-01-16 04:29:25.534481",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,9 +44,16 @@
    "search_index": 1
   },
   {
+   "bold": 1,
    "fieldname": "dom_number",
    "fieldtype": "Data",
-   "label": "DOM Number"
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "DOM Number",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_gyds",
@@ -122,7 +129,7 @@
    "description": "Ex: Head Office, Branch 1, etc",
    "fieldname": "branch",
    "fieldtype": "Select",
-   "label": "Receiver Addres Name"
+   "label": "Receiver Address Name"
   },
   {
    "fieldname": "section_break_ziby",
@@ -141,10 +148,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-16 07:04:52.127578",
+ "modified": "2025-01-17 09:58:35.270056",
  "modified_by": "Administrator",
  "module": "Delivery",
  "name": "Manual Delivery Order",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -163,5 +171,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "dom_number"
 }

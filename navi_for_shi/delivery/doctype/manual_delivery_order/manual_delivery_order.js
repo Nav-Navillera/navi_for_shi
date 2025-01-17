@@ -4,7 +4,9 @@
 frappe.ui.form.on('Manual Delivery Order', {
     setup: function (frm) {
         // Setup awal jika diperlukan
-        update_branch_options(frm);
+        if (frm.doc.receiver) {
+            update_branch_options(frm);
+        }
     },
 
     refresh: function (frm) {
@@ -32,6 +34,7 @@ frappe.ui.form.on('Manual Delivery Order', {
         } else {
             frm.set_value('receiver_address', '');
         }
+        console.log(frm.trigger('get_items'))
     }
 });
 
@@ -57,7 +60,7 @@ function update_branch_options(frm) {
 // Fungsi untuk mengambil address dari branch yang dipilih
 function update_address(frm) {
     frappe.call({
-        method: 'frappe.client.get_value',
+        method: 'frappe.client.get',
         args: {
             doctype: 'Customer and Vendor',
             name: frm.doc.receiver,
@@ -65,7 +68,7 @@ function update_address(frm) {
         },
         callback: function (r) {
             if (r.message) {
-                const table_address = JSON.parse(r.message.table_address || '[]');
+                const table_address = r.message.table_address;
                 console.log(r.message)
                 const selected_row = table_address.find(row => row.address_name === frm.doc.branch);
                 
