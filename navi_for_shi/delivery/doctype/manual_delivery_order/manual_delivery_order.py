@@ -19,6 +19,7 @@ class ManualDeliveryOrder(Document):
         - Replace '-' dengan '/' untuk semua dokumen non-revisi.
         - Mempertahankan revisi (-##) untuk dokumen revisi.
         """
+        
         # Pastikan doc_name adalah string
         if not isinstance(doc_name, str):
             raise TypeError(f"Expected string for doc_name, got {type(doc_name).__name__}")
