@@ -176,14 +176,14 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
                 const satuan = sisa % 10;
 
                 if (ratusan > 0) {
-                    hasil += (ratusan === 1 ? "seratus" : angkaDasar[ratusan] + " ratus") + " ";
+                    hasil += (ratusan === 1 ? "Seratus" : angkaDasar[ratusan] + " Ratus") + " ";
                 }
 
                 if (puluhan > 1) {
                     hasil += angkaDasar[puluhan] + " puluh ";
                     if (satuan > 0) hasil += angkaDasar[satuan] + " ";
                 } else if (puluhan === 1) {
-                    hasil += (satuan === 0 ? "sepuluh" : satuan === 1 ? "sebelas" : angkaDasar[satuan] + " belas") + " ";
+                    hasil += (satuan === 0 ? "Sepuluh" : satuan === 1 ? "Sebelas" : angkaDasar[satuan] + " Belas") + " ";
                 } else if (satuan > 0) {
                     hasil += angkaDasar[satuan] + " ";
                 }
@@ -221,6 +221,9 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
                 let desimalKata = "";
                 for (const digit of angkaDesimal) {
                     // Konversi digit ke angka (termasuk nol)
+                    if (digit == '0') {
+                        desimalKata += "Nol ";
+                    }
                     desimalKata += angkaDasar[digit] + " ";
                 }
                 hasilTerbilang += " koma " + desimalKata.trim();
