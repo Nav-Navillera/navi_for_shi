@@ -5,6 +5,15 @@ import frappe
 from frappe.model.document import Document
 
 class CostBreakdownSheet(Document):
+
+    def before_insert(self):
+        self.doc_number = None
+
+    def after_insert(self):
+        # Format nama dokumen
+        self.doc_number = self.generate_document_name(str(self.name))
+        self.save()
+
     def before_save(self):
         # List of child tables and their corresponding total fields
         tables = {
@@ -47,3 +56,38 @@ class CostBreakdownSheet(Document):
                     # Calculate subtotal for each row
                     total_time += row.quantity
                 setattr(self, total_field, total_time)
+
+    def generate_document_name(self, doc_name):
+        """
+        generate dom_number format visual cetak:
+        - Replace '-' dengan '/' untuk semua dokumen non-revisi.
+        - Mempertahankan revisi (-##) untuk dokumen revisi.
+        """
+        
+        # Memastikan doc_name adalah string
+        if not isinstance(doc_name, str):
+            raise TypeError(f"Expected string for doc_name, got {type(doc_name).__name__}")
+
+        # Cari posisi tanda "-" terakhir
+        last_hyphen_index = doc_name.rfind("-")
+
+        # Memeriksa apakah dokumen adalah tipe revisi
+        is_revision = (
+            last_hyphen_index != -1
+            and len(doc_name) - last_hyphen_index <= 3
+            and doc_name[last_hyphen_index + 1:].isdigit()
+        )
+
+        if is_revision:
+            base_name = doc_name[:last_hyphen_index]  # Nama utama
+            revision = doc_name[last_hyphen_index:]  # Bagian revisi (-##)
+        else:
+            base_name = doc_name
+            revision = ""
+
+        # Mengganti "-" dengan "/" hanya pada bagian nama utama
+        formatted_base_name = base_name.replace("-", "/")
+
+        # Gabung kode asli dan revisi
+        return f"{formatted_base_name}{revision}"
+    

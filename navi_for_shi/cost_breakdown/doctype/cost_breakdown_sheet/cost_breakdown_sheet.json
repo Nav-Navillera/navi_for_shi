@@ -1,67 +1,65 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:CBD-SHI-{YY}-{MM}-{####}",
  "creation": "2025-01-11 12:46:24.379250",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "doc_number",
+  "amended_from",
+  "sales_quotation",
+  "column_break_omtl",
   "job_name",
   "customer_name",
   "uom",
-  "column_break_omtl",
-  "amended_from",
-  "sales_quotation",
-  "section_break_suzg",
+  "sb_material",
+  "cb_material",
   "table_material",
-  "section_break_tftf",
-  "column_break_vvjr",
-  "column_break_egyn",
-  "column_break_ebzy",
-  "column_break_glzy",
+  "sb_material_u",
+  "cb_material_1",
+  "data_xzia",
+  "cb_material_2",
   "total_material_cost",
-  "consumable_section",
+  "sb_consumable",
+  "cb_consumable",
   "table_consumable",
-  "section_break_hdnm",
-  "column_break_xjct",
-  "column_break_arys",
-  "column_break_aggd",
-  "column_break_zusf",
+  "sb_consumable_u",
+  "cb_consumable_1",
+  "data_fnlv",
+  "cb_consumable_2",
   "total_consumable_cost",
   "section_break_ddzf",
+  "sb_process",
   "table_process",
-  "section_break_clbr",
-  "column_break_hgyo",
-  "column_break_gjep",
-  "column_break_xsfe",
+  "sb_process_u",
+  "cb_process_1",
+  "data_lwkz",
+  "cb_process_2",
   "total_process_time",
-  "column_break_hlma",
+  "cb_process_3",
   "total_process_cost",
-  "depretiation_and_amortization_section",
+  "sb_depreciation",
   "table_depreciation",
-  "section_break_bllx",
-  "column_break_ozbu",
-  "column_break_uujz",
-  "column_break_gito",
-  "column_break_ixdi",
+  "sb_depreciation_u",
+  "cb_depreciation_1",
+  "data_kbbn",
+  "cb_depreciation_2",
   "total_depreciation_cost",
-  "section_break_szqd",
-  "column_break_pnby",
-  "column_break_qvvm",
-  "column_break_doqy",
+  "sb_total_1",
+  "cb_total_1_4",
   "total_1",
-  "transport_and_handling",
-  "section_break_wxuc",
-  "column_break_lhem",
-  "column_break_qutr",
+  "cb_total_1_2",
   "overhead",
-  "profit",
-  "column_break_bvyb",
   "overhead_total",
+  "cb_total_1_3",
+  "profit",
   "profit_total",
-  "section_break_qjtm",
-  "column_break_bxor",
-  "column_break_html",
-  "column_break_ohys",
+  "cb_total_1_1",
+  "transport_and_handling",
+  "sb_total_3",
+  "cb_total_3_1",
+  "grand_total_text",
+  "cb_total_3_2",
   "grand_total"
  ],
  "fields": [
@@ -76,13 +74,21 @@
    "search_index": 1
   },
   {
+   "bold": 1,
    "fieldname": "job_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Job Name"
   },
   {
+   "bold": 1,
    "fieldname": "customer_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Customer Name",
    "options": "Customer and Vendor"
   },
@@ -97,43 +103,18 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Sales Quotation Number ",
    "fieldname": "sales_quotation",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Sales Quotation"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_suzg",
-   "fieldtype": "Section Break",
-   "hide_border": 1,
-   "label": "Material"
   },
   {
    "fieldname": "table_material",
    "fieldtype": "Table",
    "label": "List of Material",
    "options": "CBD Material"
-  },
-  {
-   "fieldname": "section_break_tftf",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_vvjr",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_egyn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ebzy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_glzy",
-   "fieldtype": "Column Break"
   },
   {
    "bold": 1,
@@ -143,37 +124,10 @@
    "read_only": 1
   },
   {
-   "collapsible": 1,
-   "fieldname": "consumable_section",
-   "fieldtype": "Section Break",
-   "hide_border": 1,
-   "label": "Consumable"
-  },
-  {
    "fieldname": "table_consumable",
    "fieldtype": "Table",
    "label": "List of Consumable",
    "options": "CBD Consumable"
-  },
-  {
-   "fieldname": "section_break_hdnm",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_xjct",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_arys",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_aggd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_zusf",
-   "fieldtype": "Column Break"
   },
   {
    "bold": 1,
@@ -196,32 +150,12 @@
    "options": "CBD Process"
   },
   {
-   "fieldname": "section_break_clbr",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_hgyo",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_gjep",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_xsfe",
-   "fieldtype": "Column Break"
-  },
-  {
    "bold": 1,
    "description": "Hour",
    "fieldname": "total_process_time",
    "fieldtype": "Float",
    "label": "Total Process Time",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_hlma",
-   "fieldtype": "Column Break"
   },
   {
    "bold": 1,
@@ -231,89 +165,12 @@
    "read_only": 1
   },
   {
-   "collapsible": 1,
-   "fieldname": "depretiation_and_amortization_section",
-   "fieldtype": "Section Break",
-   "hide_border": 1,
-   "label": "Depretiation And Amortization"
-  },
-  {
-   "fieldname": "section_break_bllx",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_ozbu",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_uujz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_gito",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ixdi",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_szqd",
-   "fieldtype": "Section Break",
-   "hide_border": 1,
-   "label": "Total"
-  },
-  {
-   "fieldname": "column_break_pnby",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_qvvm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_doqy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_wxuc",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_lhem",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_bvyb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_qutr",
-   "fieldtype": "Column Break"
-  },
-  {
+   "bold": 1,
    "description": "Material + Consumable + Process + Depreciation",
    "fieldname": "total_1",
    "fieldtype": "Currency",
    "label": "Total A+B+C+D",
    "read_only": 1
-  },
-  {
-   "fieldname": "section_break_qjtm",
-   "fieldtype": "Section Break",
-   "label": "Service Charge"
-  },
-  {
-   "fieldname": "column_break_bxor",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_html",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ohys",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "transport_and_handling",
@@ -346,7 +203,10 @@
    "bold": 1,
    "fieldname": "grand_total",
    "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
    "label": "Grand Total",
+   "non_negative": 1,
    "read_only": 1
   },
   {
@@ -361,15 +221,176 @@
    "fieldtype": "Currency",
    "label": "Total Depretiation and Amortization Cost",
    "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "doc_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Document Number",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_total_1",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "cb_total_1_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_total_1_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sb_total_3",
+   "fieldtype": "Section Break",
+   "label": "Service Charge"
+  },
+  {
+   "columns": 5,
+   "fieldname": "cb_total_3_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_total_3_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_material",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Material"
+  },
+  {
+   "fieldname": "cb_material_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_material_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_consumable",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Consumable"
+  },
+  {
+   "fieldname": "cb_consumable_1",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_fnlv",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_xzia",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_lwkz",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_kbbn",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_total_1_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_total_1_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_material",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sb_material_u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb_consumable",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sb_consumable_u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sb_process",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sb_process_u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb_process_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_process_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_process_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_depreciation",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Depretiation And Amortization"
+  },
+  {
+   "fieldname": "sb_depreciation_u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb_depreciation_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_depreciation_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cb_consumable_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "grand_total_text",
+   "fieldtype": "Data",
+   "label": "Grand Total in Text",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-16 02:45:59.399938",
+ "modified": "2025-01-18 10:06:39.785853",
  "modified_by": "Administrator",
  "module": "Cost Breakdown",
  "name": "Cost Breakdown Sheet",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -386,7 +407,22 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Draft"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Propose"
+  },
+  {
+   "color": "Green",
+   "title": "Submited"
+  }
+ ],
+ "title_field": "doc_number"
 }

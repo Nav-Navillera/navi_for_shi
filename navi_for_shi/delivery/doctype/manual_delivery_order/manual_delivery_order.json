@@ -14,18 +14,19 @@
   "dom_details_section",
   "delivery_date",
   "senderorigin_place",
-  "vehicle_number_plate",
+  "vehicle_plate_num",
   "column_break_qgnk",
   "receiver",
   "column_break_onvl",
   "branch",
   "receiver_address",
   "items_section",
-  "list_of_item",
+  "item_list",
   "section_break_ziby",
+  "creator",
   "amended_from",
   "column_break_rqbt",
-  "creator"
+  "list_of_do"
  ],
  "fields": [
   {
@@ -76,23 +77,22 @@
   {
    "fieldname": "dom_details_section",
    "fieldtype": "Section Break",
-   "label": "DOM Details"
+   "label": "Document Details"
   },
   {
    "fieldname": "delivery_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Delivery Date"
   },
   {
-   "default": "PT. Sum Hing Indonesia",
+   "default": "SUM HING INDONESIA, PT",
    "fieldname": "senderorigin_place",
    "fieldtype": "Data",
-   "label": "Origin Place"
-  },
-  {
-   "fieldname": "vehicle_number_plate",
-   "fieldtype": "Data",
-   "label": "Vehicle Number Plate"
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "From"
   },
   {
    "fieldname": "column_break_qgnk",
@@ -101,25 +101,22 @@
   {
    "fieldname": "receiver",
    "fieldtype": "Link",
-   "label": "Receiver/Destination",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Destination",
    "options": "Customer and Vendor"
   },
   {
    "fieldname": "receiver_address",
    "fieldtype": "Small Text",
-   "label": "Receiver Address",
+   "label": "Destination Address",
    "max_height": "105px"
   },
   {
    "fieldname": "items_section",
    "fieldtype": "Section Break",
    "label": "Items"
-  },
-  {
-   "fieldname": "list_of_item",
-   "fieldtype": "Table",
-   "label": "List of Item",
-   "options": "DOM Item"
   },
   {
    "fieldname": "column_break_onvl",
@@ -129,7 +126,7 @@
    "description": "Ex: Head Office, Branch 1, etc",
    "fieldname": "branch",
    "fieldtype": "Select",
-   "label": "Receiver Address Name"
+   "label": "Destination Address Name"
   },
   {
    "fieldname": "section_break_ziby",
@@ -142,13 +139,31 @@
   {
    "fieldname": "creator",
    "fieldtype": "Data",
-   "label": "Creator"
+   "label": "Created by"
+  },
+  {
+   "fieldname": "list_of_do",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Isi DO"
+  },
+  {
+   "fieldname": "vehicle_plate_num",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Plate Num."
+  },
+  {
+   "fieldname": "item_list",
+   "fieldtype": "Table",
+   "label": "List of Item",
+   "options": "DOM Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-17 09:58:35.270056",
+ "modified": "2025-01-18 04:24:01.190726",
  "modified_by": "Administrator",
  "module": "Delivery",
  "name": "Manual Delivery Order",
