@@ -2,6 +2,3 @@
 
 Customized ERP for SHI
 
-#### License
-
-mit
