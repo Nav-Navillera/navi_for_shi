@@ -180,7 +180,7 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
                 }
 
                 if (puluhan > 1) {
-                    hasil += angkaDasar[puluhan] + " puluh ";
+                    hasil += angkaDasar[puluhan] + " Puluh ";
                     if (satuan > 0) hasil += angkaDasar[satuan] + " ";
                 } else if (puluhan === 1) {
                     hasil += (satuan === 0 ? "Sepuluh" : satuan === 1 ? "Sebelas" : angkaDasar[satuan] + " Belas") + " ";
@@ -226,11 +226,11 @@ frappe.ui.form.on('Cost Breakdown Sheet', {
                     }
                     desimalKata += angkaDasar[digit] + " ";
                 }
-                hasilTerbilang += " koma " + desimalKata.trim();
+                hasilTerbilang += " Koma " + desimalKata.trim();
             }
 
             // Update kolom kosong (bilangan_terbilang)
-            frm.set_value(target, hasilTerbilang)
+            frm.set_value(target, hasilTerbilang + " Rupiah")
         }
     }
 });

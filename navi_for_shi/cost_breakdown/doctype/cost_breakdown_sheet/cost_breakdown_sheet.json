@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "excel_file",
   "doc_number",
   "amended_from",
   "sales_quotation",
@@ -381,12 +382,18 @@
    "fieldtype": "Data",
    "label": "Grand Total in Text",
    "read_only": 1
+  },
+  {
+   "fieldname": "excel_file",
+   "fieldtype": "Attach",
+   "label": "Masukan File Excel",
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-18 10:06:39.785853",
+ "modified": "2025-01-18 11:55:19.498925",
  "modified_by": "Administrator",
  "module": "Cost Breakdown",
  "name": "Cost Breakdown Sheet",

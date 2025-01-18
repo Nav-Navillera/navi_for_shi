@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+import openpyxl
 from frappe.model.document import Document
 
 class CostBreakdownSheet(Document):
@@ -15,6 +16,14 @@ class CostBreakdownSheet(Document):
         self.save()
 
     def before_save(self):
+
+        # Cari file attachment yang berekstensi Excel secara otomatis
+        excel_file_url = self.find_excel_file()
+        self.job_name = excel_file_url
+        if excel_file_url:  
+            # Panggil fungsi untuk memproses file Excel
+            self.read_excel_file(excel_file_url)
+
         # List of child tables and their corresponding total fields
         tables = {
             "table_material": "total_material_cost",
@@ -90,4 +99,41 @@ class CostBreakdownSheet(Document):
 
         # Gabung kode asli dan revisi
         return f"{formatted_base_name}{revision}"
+    
+    def find_excel_file(self):
+        """Mencari file attachment dengan ekstensi .xls atau .xlsx."""
+        attachments = frappe.get_all(
+            "File",
+            filters={"attached_to_doctype": self.doctype, "attached_to_name": self.name},
+            fields=["file_url"]
+        )
+
+        for attachment in attachments:
+            file_url = attachment.get("file_url")
+            if file_url and file_url.lower().endswith((".xls", ".xlsx")):
+                return file_url
+
+        return None
+
+
+    def read_excel_file(self, file_url):
+        # Konversi file URL ke path sistem
+        file_path = "./navi/public" + file_url
+        # Buka file Excel dengan openpyxl untuk membaca cell tertentu
+        try:
+            workbook = openpyxl.load_workbook(file_path, data_only=True)  # Membuka file Excel
+            sheet = workbook["1"]  # Membuka sheet bernama "1"
+
+            # Ambil value dari cell F7
+            CBD_uom = sheet["F7"].value
+
+            # Simpan value ke field tertentu (contoh)
+            self.uom = CBD_uom
+
+
+
+        except KeyError:
+            frappe.throw("Sheet '1' tidak ditemukan dalam file Excel.")
+        except Exception as e:
+            frappe.throw(f"Gagal membaca file Excel: {str(e)}")
     
